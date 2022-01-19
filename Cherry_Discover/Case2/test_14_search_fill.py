@@ -60,38 +60,22 @@ class MyTestCase(unittest.TestCase):
         self.driver.quit()
         print('Test Over')
 
-    def test_13_backfill(self):
+    def test_14_search_fill(self):
         # 定位到iframe时
         elem52 = self.driver.find_element_by_xpath('//*[@id="longnows_tab_container"]/div[2]/iframe')
         self.driver.switch_to.frame(elem52)
+        # 定位回填状态下拉
+        self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[1]/div[8]/span/span/a').click()
+        time.sleep(1)
+        # 选择下拉第一个
+        self.driver.find_element_by_xpath('/html/body/div[4]/div/div[1]').click()
+        time.sleep(1)
         # 要先查询，定位查询按钮
         self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[3]/div/button[1]').click()
         time.sleep(2)
-        # 勾选列表页面第一条数据
-        self.driver.find_element_by_xpath('/html/body/div[2]/div[2]/div[3]/div[2]/table/tbody/tr/td[1]/div/div/i').click()
-        time.sleep(1)
-        #点击编辑按钮
-        self.driver.find_element_by_xpath('/html/body/div[2]/div[2]/div[4]/div[2]/table/tbody/tr/td/div/button/i').click()
-        time.sleep(1)
 
-        # 跳转到编辑iframe位置
-        elem53 = self.driver.find_element_by_xpath('/html/body/div[7]/div[2]/iframe')
-
-        self.driver.switch_to.frame(elem53)
-        # 在弹框里，确定海关编号位置
-        self.driver.find_element_by_xpath('//*[@id="EditForm"]/div/div[1]/div[4]/input').send_keys("000020221000000001")
-        time.sleep(1)
-        # 定位申报日期文本框
-        self.driver.find_element_by_xpath('//*[@id="dDate"]').click()
-        time.sleep(1)
-        # 选择申报日期
-        self.driver.find_element_by_xpath('//*[@id="layui-laydate1"]/div[2]/div/span[3]').click()
-        time.sleep(1)
-        # 点击确定按钮
-        self.driver.find_element_by_xpath('//*[@id="EditForm"]/div/div[3]/div/button').click()
-        time.sleep(2)
         # 截图
-        self.driver.get_screenshot_as_file("D:\\PythonProject\\Cherry_Discover\\Image\\backfill.png")
+        self.driver.get_screenshot_as_file("D:\\PythonProject\\Cherry_Discover\\Image\\search_backfill.png")
 
 
         # 跳出iframe，点击取消按钮=======================
