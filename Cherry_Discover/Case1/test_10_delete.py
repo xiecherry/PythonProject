@@ -52,7 +52,7 @@ class MyTestCase(unittest.TestCase):
         ActionChains(self.driver).click(elem5).perform()
         time.sleep(8)
 
-    def test_4_delete(self):
+    def test_10_delete(self):
         # 定位到iframe时
         elem54 = self.driver.find_element_by_xpath('//*[@id="longnows_body"]/div[2]/div[2]/div[2]/iframe')
         self.driver.switch_to.frame(elem54)

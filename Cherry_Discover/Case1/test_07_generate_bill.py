@@ -63,7 +63,7 @@ class MyTestCase(unittest.TestCase):
         print('Test Over')
 
     # 具体的测试用例，一定要以test开头
-    def test_7_generate_bill(self):
+    def test_6_generate_bill(self):
         # ========编辑=================
 
         # 定位到iframe时

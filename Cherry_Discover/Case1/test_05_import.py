@@ -61,7 +61,7 @@ class MyTestCase(unittest.TestCase):
         print('Test Over')
 
     # 具体的测试用例，一定要以test开头
-    def test_5_import(self):
+    def test_4_import(self):
         # ========编辑=================
 
         # 定位到iframe时
