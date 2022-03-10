@@ -5,6 +5,7 @@ from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 
+# 进口管理新增、编辑、详情、导入表体、导出、导出表体、生成报关单、复制、查询、删除
 
 class MyTestCase(unittest.TestCase):
     def setUp(self) :

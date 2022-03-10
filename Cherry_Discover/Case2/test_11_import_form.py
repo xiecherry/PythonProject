@@ -5,6 +5,7 @@ from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 
+# 在进口报关单页面进行提交审核、审核、回填、查询操作
 
 class MyTestCase(unittest.TestCase):
     def setUp(self) :
