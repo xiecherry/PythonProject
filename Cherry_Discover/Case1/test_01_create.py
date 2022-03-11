@@ -91,7 +91,6 @@ class MyTestCase(unittest.TestCase):
         elem10 = self.driver.find_element_by_xpath('/html/body/div[16]/div/div[1]')
         ActionChains(self.driver).click(elem10).perform()
         time.sleep(1)
-
         # ============
         # 点击入境口岸下拉
         elem11 = self.driver.find_element_by_xpath('//*[@id="head"]/div[3]/div[4]/span/span/a')
@@ -101,7 +100,6 @@ class MyTestCase(unittest.TestCase):
         elem12 = self.driver.find_element_by_xpath('/html/body/div[17]/div/div[1]')
         ActionChains(self.driver).click(elem12).perform()
         time.sleep(1)
-
         # ============
         # 点击申报地海关下拉
         elem13 = self.driver.find_element_by_xpath('//*[@id="head"]/div[2]/div[6]/span/span/a')
