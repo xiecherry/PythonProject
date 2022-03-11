@@ -5,7 +5,10 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
 
+
+# 物料申请编辑
 class MyTestCase(unittest.TestCase):
+
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.maximize_window()
@@ -67,81 +70,34 @@ class MyTestCase(unittest.TestCase):
         self.driver.quit()
         print('Test Over')
 
-    def test_1_create(self):
+    def test_2_edit(self):
         # ====================================================表头==============================================
         # 再定位新的iframe
         elem15 = self.driver.find_element_by_xpath('//*[@id="mainFrame"]')
         self.driver.switch_to.frame(elem15)
         time.sleep(3)
-        # 点击新增按钮
-        elem7 = self.driver.find_element_by_xpath('/html/body/div[2]/div[1]/div[1]/div/button[2]')
+        # 选种一条数据
+        elem16 = self.driver.find_element_by_xpath('/html/body/div[2]/div[2]/div[3]/div[2]/table/tbody/tr[1]/td[1]/div/div/i')
+        ActionChains(self.driver).click(elem16).perform()
+        time.sleep(2)
+        # 点击编辑按钮
+        elem7 = self.driver.find_element_by_xpath('/html/body/div[2]/div[2]/div[4]/div[2]/table/tbody/tr[1]/td/div/button[1]/i')
         ActionChains(self.driver).click(elem7).perform()
         time.sleep(2)
-        # 获取当前打开的所有窗口的句柄
-        # num1 = self.driver.window_handles
-        # print("创建页面句柄"+num1[0])
-        # self.driver.switch_to.window(num1[0])
 
-        # # 在进口台账的新增页面，定位到iframe
-        # elem8 = self.driver.find_element_by_xpath('//*[@id="longnows_tab_container"]/div[3]/iframe')
-        # print(elem8)
-        # # 跳转到frame里定位元素
-        # self.driver.switch_to.frame(elem8)
 
         # 再定位新的iframe
         elem151 = self.driver.find_element_by_xpath('//*[@id="mainFrame"]')
         self.driver.switch_to.frame(elem151)
         time.sleep(3)
 
-
-        # 设置商品料号
-        self.driver.find_element_by_xpath('//*[@id="copGNo"]').send_keys('TestL001')
-        time.sleep(1)
-        # ============
-        # 点击货品类型下拉
-        elem10 = self.driver.find_element_by_xpath('//*[@id="colla1"]/div[1]/div[4]/span/span/a')
-        ActionChains(self.driver).click(elem10).perform()
-        time.sleep(1)
-        # 选择货品类型
-        elem11 = self.driver.find_element_by_xpath('/html/body/div[4]/div/div[1]')
-        ActionChains(self.driver).click(elem11).perform()
-        time.sleep(1)
-
-        # 1.选择商品编码，先点击下拉按钮
+        # 1.修改商品编码，先点击下拉按钮
         elem12 = self.driver.find_element_by_xpath('//*[@id="colla1"]/div[2]/div[2]/span/span/a')
         ActionChains(self.driver).click(elem12).perform()
         time.sleep(1)
         # 2.选择对应的商品编码
-        elem13 = self.driver.find_element_by_xpath('/html/body/div[10]/div/div[1]')
+        elem13 = self.driver.find_element_by_xpath('/html/body/div[10]/div/div[4]')
         ActionChains(self.driver).click(elem13).perform()
-        time.sleep(1)
-
-        #规则型号
-        elem14 = self.driver.find_element_by_xpath('//*[@id="GModel"]')
-        ActionChains(self.driver).click(elem14).perform()
-        time.sleep(1)
-
-        # 设置规则型号
-        elem16 = self.driver.find_element_by_xpath('//*[@id="layui-layer2"]/div[3]/a[1]')
-        ActionChains(self.driver).click(elem16).perform()
-        time.sleep(1)
-
-        # 设置申报计量单位
-        elem17 = self.driver.find_element_by_xpath('//*[@id="colla1"]/div[5]/div[2]/span/span/a')
-        ActionChains(self.driver).click(elem17).perform()
-        time.sleep(1)
-        #下拉选择申报计量单位
-        elem18 = self.driver.find_element_by_xpath('/html/body/div[6]/div/div[1]')
-        ActionChains(self.driver).click(elem18).perform()
-        time.sleep(1)
-
-        # 设置企业物料类型
-        elem20 = self.driver.find_element_by_xpath('//*[@id="colla1"]/div[9]/div[4]/span/span/a')
-        ActionChains(self.driver).click(elem20).perform()
-        time.sleep(1)
-        # 选择企业物料类型下拉
-        elem21 = self.driver.find_element_by_xpath('/html/body/div[2]/div/div[3]')
-        ActionChains(self.driver).click(elem21).perform()
         time.sleep(1)
 
         # 点击保存按钮
@@ -149,12 +105,7 @@ class MyTestCase(unittest.TestCase):
         ActionChains(self.driver).click(elem19).perform()
         time.sleep(2)
 
-        self.driver.switch_to.default_content()
 
-        # 点击列表页面查询按钮，查询数据
-        elem20 = self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[3]/div/button[1]')
-        ActionChains(self.driver).click(elem20).perform()
-        time.sleep(3)
 
 
 
